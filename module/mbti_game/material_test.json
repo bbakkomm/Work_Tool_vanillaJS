@@ -1,0 +1,307 @@
+{
+    "query": [
+        {
+            "id": 1,
+            "title": "내일이 첫 출근 날, <br/ >전날 밤 나의 행동은?",
+            "item": [
+                { "number": "1-1", "question": "내일 출근 걱정에 밤을 샌다.", "total": ["A"], "score": 1, "omni": "button_material-test_1-1"},
+                { "number": "1-2", "question": "팩을 하고 내일 의상 ~ 첫인사까지 완벽 세팅한다.", "total": ["F"], "score": 3, "omni": "button_material-test_1-2"},
+                { "number": "1-3", "question": "침대에 눕자마자 5분 컷 깊은 잠에 든다.", "total": ["E"], "score": 2, "omni": "button_material-test_1-3"}
+            ],
+            "combtns": {
+                "exit": "button_test_Question_exit"
+            }
+        },
+        {
+            "id": 2,
+            "title": "소개팅에서 마음에 드는 <br />이성을 만났다면?",
+            "item": [
+                { "number": "2-1", "question": "심장이 두근두근 터질 것 같다.", "total": ["A"], "score": 3, "omni": "button_material-test_2-1"},
+                { "number": "2-2", "question": "끊임없이 무한 질문하는 질문 요정", "total": ["B"], "score": 2, "omni": "button_material-test_2-2"},
+                { "number": "2-3", "question": "짓궂은 농담을 하면서 상대의 리액션을 살핀다.", "total": ["F"], "score": 3, "omni": "button_material-test_2-3"}
+            ],
+            "combtns": {
+                "exit": "button_test_Question_exit"
+            }
+        },
+        {
+            "id": 3,
+            "title": "이직한 회사에서 초등학교 <br />동창과 만난 당신의 행동은?",
+            "item": [
+                { "number": "3-1", "question": "이름을 처음 들어본 척 한다.", "total": ["C"], "score": 3, "omni": "button_material-test_3-1"},
+                { "number": "3-2", "question": "어떤 반이었는지 물어보고 베프가 된다.", "total": ["E"], "score": 2, "omni": "button_material-test_3-2"},
+                { "number": "3-3", "question": "모르는 척 신경을 끄고 내 할 일만 한다.", "total": ["D","F"], "score": 1, "omni": "button_material-test_3-3"}
+            ],
+            "combtns": {
+                "exit": "button_test_Question_exit"
+            }
+        },
+        {
+            "id": 4,
+            "title": "지인의 결혼 축하 선물로 가전을 <br />선물할 때 당신의 행동은?",
+            "item": [
+                { "number": "4-1", "question": "비싸지만 무조건 최신형으로 선물", "total": ["A","E"], "score": 1, "omni": "button_material-test_4-1"},
+                { "number": "4-2", "question": "가성비 아이템들 중에 성능이 괜찮은 제품 선물", "total": ["B"], "score": 2, "omni": "button_material-test_4-2"},
+                { "number": "4-3", "question": "신혼부부에게 필요한 기능을 검색과 비교해 선물", "total": ["D"], "score": 3, "omni": "button_material-test_4-3"}
+            ],
+            "combtns": {
+                "exit": "button_test_Question_exit"
+            }
+        },
+        {
+            "id": 5,
+            "title": "친구가 비타민 음료를 주면서 <br />\"피곤해보인다 어제 밤 샜어?\" <br />라고 묻는다면?",
+            "item": [
+                { "number": "5-1", "question": "고마워.. (내가 피곤하고 아파 보이나?)", "total": ["C"], "score": 2, "omni": "button_material-test_5-1"},
+                { "number": "5-2", "question": "대박 감동 ㅠㅠ 고마워 잘 먹을게!", "total": ["E"], "score": 3, "omni": "button_material-test_5-2"},
+                { "number": "5-3", "question": "이걸 왜 줘? 나에게 잘못한 것 있니?", "total": ["B"], "score": 2, "omni": "button_material-test_5-3"}
+            ],
+            "combtns": {
+                "exit": "button_test_Question_exit"
+            }
+        },
+        {
+            "id": 6,
+            "title": "옆집 이웃과 나누는 <br />스몰 토크 대화 주제는?",
+            "item": [
+                { "number": "6-1", "question": "날씨에 대해 얘기하고 침묵을 유지한다.", "total": ["C","D"], "score": 1, "omni": "button_material-test_6-1"},
+                { "number": "6-2", "question": "혼인 유무와 자녀 유무 등 <br />인사에 대해 끊임없이 질문", "total": ["B"], "score": 2, "omni": "button_material-test_6-2"},
+                { "number": "6-3", "question": "외모로 직업과 가치관을 <br/>유추해 관련 주제로 2~3개 질문", "total": ["C"], "score": 2, "omni": "button_material-test_6-3"}
+            ],
+            "combtns": {
+                "exit": "button_test_Question_exit"
+            }
+        },
+        {
+            "id": 7,
+            "title": "약속시간에 1시간 늦은 <br />친구에게 듣고 싶은 말은?",
+            "item": [
+                { "number": "7-1", "question": "늦은 이유는 모르더라도 진심이 담긴 사과", "total": ["E"], "score": 3, "omni": "button_material-test_7-1"},
+                { "number": "7-2", "question": "사과는 하지 않지만 늦을 수 밖에 없는 이유 3가지", "total": ["B","F"], "score": 1, "omni": "button_material-test_7-2"},
+                { "number": "7-3", "question": "너에게 잘 보이고 싶어서 꾸미느라 늦었다는 말", "total": ["D"], "score": 2, "omni": "button_material-test_7-3"}
+            ],
+            "combtns": {
+                "exit": "button_test_Question_exit"
+            }
+        },
+        {
+            "id": 8,
+            "title": "친구와 여행을 간다면?",
+            "item": [
+                { "number": "8-1", "question": "출발부터 도착까지 쉬는 시간도 <br/>플랜 C까지 철저하게 계획 ", "total": ["D","F"], "score": 1, "omni": "button_material-test_8-1"},
+                { "number": "8-2", "question": "즉흥여행이 최고라면서 숙소만 예약", "total": ["E"], "score": 3, "omni": "button_material-test_8-2"},
+                { "number": "8-3", "question": "친구에게 계획 짜는 일을 모두 맡기고 숟가락 얹기", "total": ["A"], "score": 2, "omni": "button_material-test_8-3"}
+            ],
+            "combtns": {
+                "exit": "button_test_Question_exit"
+            }
+        },
+        {
+            "id": 9,
+            "title": "요리할 때 나의 스타일은?",
+            "item": [
+                { "number": "9-1", "question": "계량컵과 저울로 정량을 지켜 요리한다.", "total": ["D","F"], "score": 1, "omni": "button_material-test_9-1"},
+                { "number": "9-2", "question": "계량기 사용은 스트레스! <br/>내 직감만 전적으로 믿고 요리한다.", "total": ["B"], "score": 2, "omni": "button_material-test_9-2"},
+                { "number": "9-3", "question": "요리를 잘하지 못해서 다른 사람에게 부탁한다.", "total": ["A"], "score": 2, "omni": "button_material-test_9-3"}
+            ],
+            "combtns": {
+                "exit": "button_test_Question_exit"
+            }
+        },
+        {
+            "id": 10,
+            "title": "암기를 해야하는 상황이라면?",
+            "item": [
+                { "number": "10-1", "question": "암기가 필요한 내용을 무작정 달달 외운다.", "total": ["E"], "score": 3, "omni": "button_material-test_10-1"},
+                { "number": "10-2", "question": "암기가 필요한 내용을 완벽히 <br/>이해해야 외울 수 있다.", "total": ["C"], "score": 3, "omni": "button_material-test_10-2"},
+                { "number": "10-3", "question": "암기를 위해 나만의 규칙을 만들어 외운다.", "total": ["D"], "score": 3, "omni": "button_material-test_10-3"}
+            ],
+            "combtns": {
+                "exit": "button_test_Question_exit"
+            }
+        }
+    ],
+
+    "result": [
+        {
+            "id": 1,
+            "type": "A",
+            "item": {
+                "title": "맑고 투명한 영혼! <br/ >당신은 유리 재질",
+                "titimg": ["omy_test_type_pc_A.png","omy_test_type_mo_A.png"],
+                "context": "맑고 순수한 당신은 유리멘탈! <br/ >투명하게 빛나는 눈에서 총기가 느껴지고, <br/ >순수하고 맑은 영혼으로 주변인들의 <br/ >정신 연령도 낮아지게 만드는 게 주특기예요.",
+                "blind": "맑고 투명한 영혼! 당신은 유리 재질, 맑고 순수한 당신은 유리멘탈! 투명하게 빛나는 눈에서 총기가 느껴지고, 순수하고 맑은 영혼으로 주변인들의 정신 연령도 낮아지게 만드는 게 주특기예요."
+            },
+            "product": {
+                "type": true,
+                "img": ["omy_test_prod_pc_A.png", "omy_test_prod_mo_A.png"],
+                "text": "BESPOKE 인덕션 Infinite Line의 인피니트 글라스가 <br />자사 일반 글라스보다 무려 1.5배 스크래치 저항성이 <br />우수하다는 사실 아시나요?",
+                "url": "",
+                "omni": "goto_glass_product-info_induction-infiniteLine"
+            },
+            "combtns": {
+                "sns": {
+                    "share": "button_glass_Copy-link",
+                    "facebook": "button_glass_share_facebook",
+                    "naverblog": "button_glass_share_naverblog",
+                    "kakao": "button_glass_share_kakakotalk"
+                },
+                "btn": {
+                    "apply": "goto_glass_apply_page",
+                    "reset": "goto_glass_event-goback_page",
+                    "exit": "button_test_result_exit"
+                }
+            }
+        },
+        {
+            "id": 2,
+            "type": "B",
+            "item": {
+                "title": "투박하고 거친 외형의 소유자 <br/ >현무암 재질",
+                "titimg": ["omy_test_type_pc_B.png","omy_test_type_mo_B.png"],
+                "context": "무채색의 거친 재질의 당신은 외형은 차가워 보여요. <br/ >곁에 있으면 정을 뿜어내는 구멍이 송송 뚫려 있어서 <br/ >은근한 정과 마음의 온기를 느낄 수 있어요. 차가운 이성과 <br/ >냉철한 논리력으로 직장에서 만나면 리더형 재질이예요",
+                "blind": "투박하고 거친 외형의 소유자 현무암 재질, 무채색의 거친 재질의 당신은 외형은 차가워 보여요. 곁에 있으면 정을 뿜어내는 구멍이 송송 뚫려 있어서 은근한 정과 마음의 온기를 느낄 수 있어요. 차가운 이성과 냉철한논리력으로 직장에서 만나면 리더형 재질이예요"
+            },
+            "product": {
+                "type": false,
+                "img": ["", ""],
+                "text": "",
+                "url": "",
+                "omni": ""
+            },
+            "combtns": {
+                "sns": {
+                    "share": "button_basalt_Copy-link",
+                    "facebook": "button_basalt_share_facebook",
+                    "naverblog": "button_basalt_share_naverblog",
+                    "kakao": "button_basalt_share_kakakotalk"
+                },
+                "btn": {
+                    "apply": "goto_basalt_apply_page",
+                    "reset": "goto_glass_event-goback_page",
+                    "exit": "button_test_result_exit"
+                }
+            }
+        },
+        {
+            "id": 3,
+            "type": "C",
+            "item": {
+                "title": "조용하지만 은은한 광기의 <br/ >소유자 대리석 재질",
+                "titimg": ["omy_test_type_pc_C.png","omy_test_type_mo_C.png"],
+                "context": "진지한 성격이지만 은은한 광기의 소유자! <br/ >조용하면서 남을 잘 챙기는 당신은 외유내강 성격. <br/ >내 사람에게 만큼은 진짜 자기의 모습과 특유의 <br/ >엉뚱한 모습을 서서히 드러내는 반전 캐릭터",
+                "blind": "조용하지만 은은한 광기의 소유자 대리석 재질, 진지한 성격이지만 은은한 광기의 소유자! 조용하면서 남을 잘 챙기는 당신은 외유내강 성격. 내 사람에게 만큼은 진짜 자기의 모습과 특유의 엉뚱한 모습을 서서히 드러내는 반전 캐릭터"
+            },
+            "product": {
+                "type": false,
+                "img": ["", ""],
+                "text": "",
+                "url": "",
+                "omni": ""
+            },
+            "combtns": {
+                "sns": {
+                    "share": "button_marble_Copy-link",
+                    "facebook": "button_marble_share_facebook",
+                    "naverblog": "button_marble_share_naverblog",
+                    "kakao": "button_marble_share_kakakotalk"
+                },
+                "btn": {
+                    "apply": "goto_marble_apply_page",
+                    "reset": "goto_marble_event-goback_page",
+                    "exit": "button_test_result_exit"
+                }
+            }
+        },
+        {
+            "id": 4,
+            "type": "D",
+            "item": {
+                "title": "섬세한 매력으로 사람들의 <br/ >마음 속에 스며드는 모래 재질",
+                "titimg": ["omy_test_type_pc_D.png","omy_test_type_mo_D_v1.png"],
+                "context": "입자가 고와서 상대방의 마음에 서서히 스며들어요! <br/ >모든 유형 중에 가장 섬세하고 둥글둥글한 <br/ >마음씨를 가졌어요. 하지만 선을 넘으면 <br/ >고민없이 손절을 해버리는 냉혈인",
+                "blind": "섬세한 매력으로 사람들의 마음 속에 스며드는 모래 재질, 입자가 고와서 상대방의 마음에 서서히 스며들어요! 모든 유형 중에 가장 섬세하고 둥글둥글한 마음씨를 가졌어요. 하지만 선을 넘으면고민없이 손절을 해버리는 냉혈인"
+            },
+            "product": {
+                "type": true,
+                "img": ["omy_test_prod_pc_D.png", "omy_test_prod_mo_D.png"],
+                "text": "2024 The Frame TV 챔퍼 ‘샌드골드’ 베젤로 <br/>집안을 우아한 갤러리로 만들어 볼까요~?",
+                "url": "",
+                "omni": "goto_sand_product-info_TheFrame-sand"
+            },
+            "combtns": {
+                "sns": {
+                    "share": "button_sand_Copy-link",
+                    "facebook": "button_sand_share_facebook",
+                    "naverblog": "button_sand_share_naverblog",
+                    "kakao": "button_sand_share_kakakotalk"
+                },
+                "btn": {
+                    "apply": "goto_sand_apply_page",
+                    "reset": "goto_sand_event-goback_page",
+                    "exit": "button_test_result_exit"
+                }
+            }
+        },
+        {
+            "id": 5,
+            "type": "E",
+            "item": {
+                "title": "어디에 가든지 잘 섞이고 <br/ >강력한 존재감 강철 재질",
+                "titimg": ["omy_test_type_pc_E.png","omy_test_type_mo_E.png"],
+                "context": "어쩌면 걸어 다니는 꽹과리 일지도?! <br/ >어느 그룹에 있든지 해맑게 웃고 사람들과 어울려 놀아요. <br/ >감정적이라 은근 상처는 잘 받지만 금방 잊어버려서 <br/ >최후의 승자는 항상 웃고 있는 강철 유형이 될 거예요.",
+                "blind": "어디에 가든지 잘 섞이고 강력한 존재감 강철 재질, 어쩌면 걸어 다니는 꽹과리 일지도?! 어느 그룹에 있든지 해맑게 웃고 사람들과 어울려 놀아요. 감정적이라 은근 상처는 잘 받지만 금방 잊어버려서 최후의 승자는 항상 웃고 있는 강철 유형이 될 거예요."
+            },
+            "product": {
+                "type": false,
+                "img": ["", ""],
+                "text": "",
+                "url": "",
+                "omni": ""
+            },
+            "combtns": {
+                "sns": {
+                    "share": "button_steel_Copy-link",
+                    "facebook": "button_steel_share_facebook",
+                    "naverblog": "button_steel_share_naverblog",
+                    "kakao": "button_steel_share_kakakotalk"
+                },
+                "btn": {
+                    "apply": "goto_steel_apply_page",
+                    "reset": "goto_steel_event-goback_page",
+                    "exit": "button_test_result_exit"
+                }
+            }
+        },
+        {
+            "id": 6,
+            "type": "F",
+            "item": {
+                "title": "극강의 효율 추구! 무게는 가볍지만 <br/ >풀 파워 당신은 티타늄 재질",
+                "titimg": ["omy_test_type_pc_F.png","omy_test_type_mo_F.png"],
+                "context": "의도와 목표없이 하는 행동은 없다 효율추구! <br/ >모든 일에 완벽을 기하는 성격으로 목표를 위해서라면 <br/ >남의 감정은 등한시하는 성격이지만 <br/ >‘성공’을 위해서라면, 그 무엇이라도 할 사람들이에요.",
+                "blind": "극강의 효율 추구! 무게는 가볍지만 풀 파워 당신은 티타늄 재질, 의도와 목표없이 하는 행동은 없다 효율추구! 모든 일에 완벽을 기하는 성격으로 목표를 위해서라면 남의 감정은 등한시하는 성격이지만 ‘성공’을 위해서라면, 그 무엇이라도 할 사람들이에요."
+            },
+            "product": {
+                "type": true,
+                "img": ["omy_test_prod_pc_F.png", "omy_test_prod_mo_F.png"],
+                "text": "갤럭시 S24 Ultra 프레임은 티타늄으로 만들어졌<br />답니다~ 티타늄의 무게는 강철의 절반 이하로 가볍고, <br />녹이 쉽게 슬지 않는다고 해요!",
+                "url": "",
+                "omni": "goto_Titanium_product-info_induction-infiniteLine"
+            },
+            "combtns": {
+                "sns": {
+                    "share": "button_Titanium_steel_Copy-link",
+                    "facebook": "button_Titanium_share_facebook",
+                    "naverblog": "button_Titanium_share_naverblog",
+                    "kakao": "button_Titanium_share_kakakotalk"
+                },
+                "btn": {
+                    "apply": "goto_Titanium_apply_page",
+                    "reset": "goto_Titanium_event-goback_page",
+                    "exit": "button_test_result_exit"
+                }
+            }
+        }
+    ]
+}
