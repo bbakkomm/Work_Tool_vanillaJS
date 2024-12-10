@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>excel to json transfer v5.6</title>
+  <link rel="stylesheet" href="./transfer_v5.6.css">
+  <script src="./transfer_v5.6.js"></script>
+</head>
+<body>
+  <div class="common_container">
+    <section class="left_box common_box">
+      <button class="left_btn active" data-id="0">Excel To Json</button>
+      <button class="left_btn" data-id="1">Data Table</button>
+      <button class="left_btn" data-id="2">Readme!</button>
+    </section>
+    <section class="right_box common_box">
+      <!-- 0 -->
+      <div class="tab_item active" data-id="0">
+        <div class="title_div">Excel to Json</div>
+        <div class="ttttt_wrap"></div>
+        <div class="error_container">
+          <div class="error_wrap ct_wrap"></div>
+          <div class="copy_wrap ct_wrap"></div>
+        </div>
+        <div class="chkbox">
+          <p class="chkbox_tit">옵션형 (그룹 X 바잉툴 / ex. 런칭) :</p>
+          <input type="radio" name="grpdefChk" id="hhh_o">
+          <div class="chk_item">
+            <p class="chk_item_tit">Default 키 값 (기본 값 : "default")</p>
+            <input type="text" id="default" class="gdInput" value="" placeholder="Default 키 값 입력">
+          </div>
+          <div class="optChk_container"></div>
+        </div>
+        <div class="chkbox">
+          <p class="chkbox_tit">그룹형 (그룹 O 바잉툴 / ex. 공통기획전, 세로형) :</p>
+          <input type="radio" name="grpdefChk" id="hhh_g">
+          <div class="chk_item">
+            <p class="chk_item_tit">Group 키 값 (기본 값 : "grp")</p>
+            <input type="text" id="grp" class="gdInput" value="" placeholder="Group 키 값 입력">
+          </div>
+          <div class="chk_item">
+            <p class="chk_item_tit">Default 키 값 (기본 값 : "def")</p>
+            <input type="text" id="def" class="gdInput" value="" placeholder="Default 키 값 입력">
+          </div>
+        </div>
+        <div class="flex__Container">
+          <div class="flex__Item">
+            <p class="tempText tempText1">Excel</p>
+            <textarea class="textarea" name="" id="area1"></textarea>
+          </div>
+          <div class="flex__Item">
+            <p class="tempText tempText2">Json</p>
+            <textarea class="textarea" name="" id="area2"></textarea>
+            <div class="clipboard">복사</div>
+          </div>
+        </div>
+        <button class="btb btb1">변환</button>
+      </div>
+
+      <!-- 1 -->
+      <div class="tab_item" data-id="1">
+        <div class="title_div">Data Table</div>
+        <!-- <div class="data_txtbox"></div> -->
+        <div class="table_container"></div>
+      </div>
+
+      <!-- 2 -->
+      <div class="tab_item" data-id="2">
+        <div class="title_div">Readme</div>
+        <div class="read_container">
+          <div class="read_item">
+            <div class="read_item_tit">1. 초기 화면 (Excel To Json)</div>
+            <div class="read_item_imgbox">
+              <img src="./image/readme_00_n.png" alt="" class="read_img">
+            </div>
+            <ul class="read_item_contents">
+              <li class="read_item_contents_li">
+                <div class="read_item_li_tit">버튼 종류</div>
+                <p class="read_item_txt">1. Excel To Json 화면으로 이동 버튼</p>
+                <p class="read_item_txt">2. Data Table 화면으로 이동 버튼</p>
+                <p class="read_item_txt">3. Excel 데이터를 적용하는 영역</p>
+                <p class="read_item_txt">4. Excel 데이터에서 Json 데이터로 변환하는 영역</p>
+                <p class="read_item_txt">5. Excel 데이터에서 Json 데이터로 변환 버튼</p>
+              </li>
+            </ul>
+          </div>
+          <div class="read_item">
+            <div class="read_item_tit">2. 작동 순서</div>
+            <ul class="read_item_contents">
+              <li class="read_item_contents_li">
+                <div class="read_item_li_tit">2-1. Excel 데이터 복사</div>
+                <div class="read_item_imgbox">
+                  <img src="./image/readme_01_00.png" alt="" class="read_img">
+                  <img src="./image/readme_02_00.png" alt="" class="read_img">
+                </div>
+                <p class="read_item_txt">Excel default 부터 마지막 행, 열까지 드래그 후 복사.</p>
+              </li>
+              <li class="read_item_contents_li">
+                <div class="read_item_li_tit">2-2. Excel 데이터 첨부</div>
+                <div class="read_item_imgbox">
+                  <img src="./image/readme_03.png" alt="" class="read_img">
+                </div>
+                <p class="read_item_txt">Excel 칸 영역에 붙여넣기.</p>
+              </li>
+              <li class="read_item_contents_li">
+                <div class="read_item_li_tit">2-3. 변환 버튼 클릭</div>
+                <div class="read_item_imgbox">
+                  <img src="./image/readme_03_00.png" alt="" class="read_img">
+                </div>
+              </li>
+              <li class="read_item_contents_li">
+                <div class="read_item_li_tit">2-4. Json 데이터 복사</div>
+                <div class="read_item_imgbox">
+                  <img src="./image/readme_03_01.png" alt="" class="read_img">
+                </div>
+              </li>
+              <li class="read_item_contents_li">
+                <div class="read_item_li_tit">2-5. 에러 처리</div>
+                <div class="read_item_imgbox">
+                  <img src="./image/readme_03_02.png" alt="" class="read_img">
+                </div>
+                <div class="read_item_imgbox">
+                  <img src="./image/readme_03_03.png" alt="" class="read_img">
+                  <img src="./image/readme_03_04.png" alt="" class="read_img">
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="read_item">
+            <div class="read_item_tit">3. 업데이트 내역</div>
+            <ul class="read_item_contents">
+              <li class="read_item_contents_li">
+                <div class="read_item_li_tit">v5.1 그룹 당, 디폴트 여부 및 중복 체크</div>
+                <div class="read_item_imgbox">
+                  <img src="./image/readme_06_00.png" alt="" class="read_img">
+                  <img src="./image/readme_06_01.png" alt="" class="read_img">
+                </div>
+                <p class="read_item_txt">1. 그룹핑 키 값 입력</p>
+                <p class="read_item_txt">2. 디폴트 키 값 입력</p>
+                <p class="read_item_txt">3. 그룹핑, 디폴트 값 체크 기능 On / Off</p>
+                <p class="read_item_txt">체크 On 일 때, 그룹 키 값과 디폴트 키 값이 DB 내 키 값과 비교하여 올바르지 않으면 조건 문구 노출</p>
+              </li>
+              <li class="read_item_contents_li">
+                <div class="read_item_imgbox">
+                  <img src="./image/readme_06_02.png" alt="" class="read_img">
+                  <!-- <img src="./image/readme_06_01.png" alt="" class="read_img"> -->
+                </div>
+                <!-- <p class="read_item_txt">1. 그룹핑 키 값 입력</p>
+                <p class="read_item_txt">2. 디폴트 키 값 입력</p>
+                <p class="read_item_txt">3. 그룹핑, 디폴트 값 체크 기능 On / Off</p> -->
+                <p class="read_item_txt">그룹 키, 디폴트 키 DB와 일치 시킨다.</p>
+              </li>
+              <li class="read_item_contents_li">
+                <div class="read_item_imgbox">
+                  <img src="./image/readme_06_03.png" alt="" class="read_img">
+                  <!-- <img src="./image/readme_06_01.png" alt="" class="read_img"> -->
+                </div>
+                <p class="read_item_txt">그룹핑과 디폴트 조건 로직</p>
+                <p class="read_item_txt">1. 1개의 그룹 당, 디폴트 1개가 무조건 존재해야 합니다.</p>
+                <p class="read_item_txt">2. 디폴트 0개 이거나 2개 이상일 때, 조건 문구 노출</p>
+                <p class="read_item_txt">** 디폴트는 [ <span style="font-weight: 700;">-</span>, <span style="font-weight: 700;">O</span> ]로 구성되어 있어야 정상 동작 가능</p>
+              </li>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="flex__Container" style="display: none;">
+    <div class="flex__Item">
+      <p class="tempText tempText1">Json to Excel</p>
+      <textarea name="" id="area3"></textarea>
+    </div>
+    <div class="flex__Item">
+      <p class="tempText tempText2">Result</p>
+      <textarea name="" id="area4"></textarea>
+    </div>
+  </div>
+  <button class="btb btb2" style="display: none;">변환</button>
+
+  <div class="dimm_wrap"></div>
+  <div class="dimm_spinner">
+    <img src="./Spinner.gif" alt="">
+  </div>
+</body>
+</html>
