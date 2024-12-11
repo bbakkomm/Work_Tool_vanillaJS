@@ -37,15 +37,3 @@ conditionTransfer(_buying, _$this, data) {
 
     return result;
 }
-
-// 다중 조건 show mapping
-try {
-    $secWrap.find('[data-case-show]').each(function(){
-        // conditionTransfer(_buying, _$this, data);
-        if (buyingUtil.conditionTransfer(buying, $(this), 'data-case-show')) {
-            $(this).removeClass('pt_sam_hide');
-        } else {
-            $(this).addClass('pt_sam_hide');
-        }
-    });
-} catch (e) { console.error(e); }
