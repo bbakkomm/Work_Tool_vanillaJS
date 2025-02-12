@@ -6,6 +6,11 @@
   <title>Excel to Info Transfer v1.0</title>
   <link rel="stylesheet" href="./transfer_v1.0.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <script src="https://code.highcharts.com/modules/boost.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/xrange.js"></script>
   <script src="./transfer_v1.0.js"></script>
 </head>
 <body>
@@ -94,34 +99,9 @@
             </div>
           </div>
         </div>
+        <div id="myChart"></div>
         <button class="btb btb1">변환</button>
       </div>
-      <!-- <div>
-        <canvas id="myChart" style="width: 100%;"></canvas>
-      </div>
-    
-      <script>
-        const ctx = document.getElementById('myChart');
-      
-        new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
-              borderWidth: 1
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
-      </script> -->
     </section>
   </div>
 

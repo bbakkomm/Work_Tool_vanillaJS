@@ -2,6 +2,9 @@ let data = {
     origin: '',
     processData: [],
     finData: [],
+    finAmpData: [],
+    finKwData: [],
+    finTimeData: [],
     RowLen: 0,
     ColumnLen: 0,
     FirstTime: '',
@@ -26,7 +29,7 @@ let data = {
 
 const comFunc = {
     resetData: () => {
-        data = { origin: '', processData: [], finData: [], RowLen: 0, ColumnLen: 0, FirstTime: '', LastTime: '', RunningTime: '', WorkTime: '', StopTime: '', coreKw: [], minKw: 0, maxKw: 0, avgKw: 0, coreA: [], minA: 0, maxA: 0, avgA: 0, et: '', totalArr: [], trueValArr: [], falseValArr: [], remainTime: 10,}
+        data = { origin: '', processData: [], finData: [], finAmpData: [], finKwData: [], finTimeData: [], RowLen: 0, ColumnLen: 0, FirstTime: '', LastTime: '', RunningTime: '', WorkTime: '', StopTime: '', coreKw: [], minKw: 0, maxKw: 0, avgKw: 0, coreA: [], minA: 0, maxA: 0, avgA: 0, et: '', totalArr: [], trueValArr: [], falseValArr: [], remainTime: 10,}
 
         data.origin = area1.value;
         data.processData = data.origin.split('\n');
@@ -54,6 +57,15 @@ const comFunc = {
         minA = (Math.min.apply(null, coreA)).toFixed(2);
         maxA = (Math.max.apply(null, coreA)).toFixed(2);
         avgA = (coreA.reduce((a, c) => a + c) / coreA.length).toFixed(2);
+
+        // 전체 Amp 데이터
+        data.finAmpData = data.finData.map(v => Number(v.filter((c,j) => j === 2)[0]).toFixed(2));
+
+        // 전체 kW 데이터
+        data.finKwData = data.finData.map(v => Number(v.filter((c,j) => j === 3)[0]).toFixed(2));
+
+        // 전체 시간 데이터
+        data.finTimeData = data.finData.map(v => secondsToTimeFormat(secondFormat(v.filter((c,j) => j === 1)[0])));
 
         // 가동 중, 정지 TOTAL 그룹핑
         let tmpObj = {
@@ -253,6 +265,32 @@ function secondFormat (time) {
     return (HH * 60 * 60) + (MM * 60) + SS;
 }
 
+function makeChart (cData) {
+    document.querySelector('#myChart').style.height = '700px';
+
+    Highcharts.chart('myChart', {
+        chart: {
+            zoomType: 'x'
+        },
+        scrollbar: {
+            enabled: true
+        },
+        xAxis: [{
+            tickInterval: 100,
+            categories: Array.from({length: cData.finTimeData.length}, (v, i) => cData.finTimeData[i]),
+            crosshair: true,
+        }],
+        series: [
+            {
+                data: Array.from({length: cData.finAmpData.length}, (v, i) => Number(cData.finAmpData[i])),
+            },
+            {
+                data: Array.from({length: cData.finKwData.length}, (v, i) => Number(cData.finKwData[i])),
+            },
+        ]
+    });
+}
+
 window.addEventListener('load', () => {
     const area1 = document.querySelector('#area1');
     const area2 = document.querySelector('#area2');
@@ -268,8 +306,11 @@ window.addEventListener('load', () => {
     const btb1 = document.querySelector('.btb1');
 
     btb1.addEventListener('click', () => {
+        if (area1.value === '') return false;
+
         comFunc.resetData();
         comFunc.resetHtml();
         comFunc.htmlDraw();
+        makeChart(data);
     });
 });
