@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel to Info Transfer v1.0</title>
+  <link rel="stylesheet" href="./transfer_v1.0.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js"></script>
+  <script src="./transfer_v1.0.js"></script>
+</head>
+<body>
+  <div class="common_container">
+    <section class="left_box common_box">
+      <button class="left_btn active" data-id="0">Excel To Info</button>
+    </section>
+    <section class="right_box common_box">
+      <!-- 0 -->
+      <div class="tab_item active" data-id="0">
+        <div class="title_div">Excel to Info</div>
+        <div class="error_container">
+          <div class="error_wrap ct_wrap"></div>
+          <div class="copy_wrap ct_wrap"></div>
+        </div>
+        <div class="flex__Container">
+          <div class="flex__Item excel">
+            <p class="tempText tempText1">Excel</p>
+            <textarea class="textarea" name="" id="area1"></textarea>
+          </div>
+          <div class="flex__Item detail">
+            <p class="tempText tempText2">Result</p>
+            <div class="flex_divd">
+              <table class="detect_wrap">
+                <tr>
+                  <th>시작 시간</th>
+                  <td class="det_data det_data_01">&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                  <th>종료 시간</th>
+                  <td class="det_data det_data_02">&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                  <th>측정 시간</th>
+                  <td class="det_data det_data_03">&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                  <th>가동 시간</th>
+                  <td class="det_data det_data_04">&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                  <th>정지 시간</th>
+                  <td class="det_data det_data_05">&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+              </table>
+              <table class="detect_wrap">
+                <tr>
+                  <th style="text-align: left;">가동 중 최소 전류 (A)</th>
+                  <td class="det_data det_data_06">&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                  <th style="text-align: left;">가동 중 최대 전류 (A)</th>
+                  <td class="det_data det_data_07">&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                  <th style="text-align: left;">가동 중 평균 전류 (A)</th>
+                  <td class="det_data det_data_08">&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                  <th style="text-align: left;">가동 중 최소 전력 (kW)</th>
+                  <td class="det_data det_data_09">&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                  <th style="text-align: left;">가동 중 최대 전력 (kW)</th>
+                  <td class="det_data det_data_10">&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                  <th style="text-align: left;">가동 중 평균 전력 (kW)</th>
+                  <td class="det_data det_data_11">&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="flex__Container">
+          <div class="flex__Item down">
+            <div class="flex_divd">
+              <table class="detect_wrap">
+                <tr>
+                  <th style="text-align: left; vertical-align: top;">구간별 가동 정보</th>
+                  <td class="det_data det_data_12" style="text-align: left; vertical-align: top;">&nbsp;&nbsp;&nbsp;</td>
+                  <th style="text-align: left; vertical-align: top;">구간별 정지 정보</th>
+                  <td class="det_data det_data_13" style="text-align: left; vertical-align: top;">&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <button class="btb btb1">변환</button>
+      </div>
+      <!-- <div>
+        <canvas id="myChart" style="width: 100%;"></canvas>
+      </div>
+    
+      <script>
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script> -->
+    </section>
+  </div>
+
+  <div class="flex__Container" style="display: none;">
+    <div class="flex__Item">
+      <p class="tempText tempText1">Info to Excel</p>
+      <textarea name="" id="area3"></textarea>
+    </div>
+    <div class="flex__Item">
+      <p class="tempText tempText2">Result</p>
+      <textarea name="" id="area4"></textarea>
+    </div>
+  </div>
+  <button class="btb btb2" style="display: none;">변환</button>
+
+  <div class="dimm_wrap"></div>
+  <!-- <div class="dimm_spinner">
+    <img src="./Spinner.gif" alt="">
+  </div> -->
+</body>
+</html>
