@@ -28,7 +28,7 @@
 
 textarea { padding: 10px;}
 .btb { padding: 30px 50px; font-size: 35px; font-weight: 700;}
-.btb.btb1 { position: sticky; bottom: 60px; width: 100%; cursor: pointer; background-color: #38ec8c; border-radius: 10px; margin-top: 10px; transition: 0.3s;}
+.btb.btb1 { position: sticky; bottom: 10px; width: 100%; cursor: pointer; background-color: #38ec8c; border-radius: 10px; margin-top: 10px; transition: 0.3s;}
 .btb.btb1:hover { background-color: #3eff98;}
 .tempText { display: block; width: 100%; height: auto; font-size: 30px; padding: 5px; font-weight: 700; color: #000;}
 .textarea { width: 100%; height: 300px; font-size: 15px; border: 2px solid #000; border-radius: 10px; resize: none;}
@@ -146,3 +146,5 @@ textarea { padding: 10px;}
 .detect_wrap { font-size: 20px; border-collapse: collapse; }
 .detect_wrap th { font-weight: 700; padding: 10px 15px; border: 1px solid #000;}
 .detect_wrap td { padding: 10px 15px; border: 1px solid #000; text-align: right;}
+
+#myChart { margin: 50px 0 30px 0;}

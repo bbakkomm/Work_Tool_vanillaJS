@@ -275,6 +275,9 @@ function makeChart (cData) {
         scrollbar: {
             enabled: true
         },
+        title: {
+            text: ''
+        },
         xAxis: [{
             tickInterval: 100,
             categories: Array.from({length: cData.finTimeData.length}, (v, i) => cData.finTimeData[i]),
@@ -282,12 +285,18 @@ function makeChart (cData) {
         }],
         series: [
             {
+                lineWidth: 5,
+                className: "seriesLine_01",
                 data: Array.from({length: cData.finAmpData.length}, (v, i) => Number(cData.finAmpData[i])),
+                color: '#1144ed'
             },
             {
+                lineWidth: 5,
+                className: "seriesLine_02",
                 data: Array.from({length: cData.finKwData.length}, (v, i) => Number(cData.finKwData[i])),
+                color: '#e3661e'
             },
-        ]
+        ],
     });
 }
 
