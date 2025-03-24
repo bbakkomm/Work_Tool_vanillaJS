@@ -49,14 +49,18 @@ const comFunc = {
         // 가동 중 전력
         coreKw = data.finData.map(v => Number(v.filter((c,j) => j === 3)[0])).filter(v => v !== 0);
         minKw = (Math.min.apply(null, coreKw)).toFixed(2);
+        minKw = !isFinite(minKw) ? 0 : minKw;
         maxKw = (Math.max.apply(null, coreKw)).toFixed(2);
-        avgKw = (coreKw.reduce((a, c) => a + c) / coreKw.length).toFixed(2);
+        maxKw = !isFinite(maxKw) ? 0 : maxKw;
+        avgKw = coreKw.length !== 0 ? (coreKw.reduce((a, c) => a + c) / coreKw.length).toFixed(2) : '0';
 
         // 가동 중 전류
         coreA = data.finData.map(v => Number(v.filter((c,j) => j === 2)[0])).filter(v => v !== 0);
         minA = (Math.min.apply(null, coreA)).toFixed(2);
+        minA = !isFinite(minA) ? 0 : minA;
         maxA = (Math.max.apply(null, coreA)).toFixed(2);
-        avgA = (coreA.reduce((a, c) => a + c) / coreA.length).toFixed(2);
+        maxA = !isFinite(maxA) ? 0 : maxA;
+        avgA = coreA.length !== 0 ? (coreA.reduce((a, c) => a + c) / coreA.length).toFixed(2): '0';
 
         // 전체 Amp 데이터
         data.finAmpData = data.finData.map(v => Number(v.filter((c,j) => j === 2)[0]).toFixed(2));
@@ -158,9 +162,12 @@ const comFunc = {
             }
         }
 
+        // console.log(data.trueValArr);
+        // console.log(data.falseValArr);
+
         // WorkTime, StopTime
-        WorkTime = secondsToTimeFormat(data.trueValArr.map(v => secondFormat(v.time)).reduce((v,c) => v + c));
-        StopTime = secondsToTimeFormat(data.falseValArr.map(v => secondFormat(v.time)).reduce((v,c) => v + c));
+        WorkTime = data.trueValArr.length !== 0 ? secondsToTimeFormat(data.trueValArr.map(v => secondFormat(v.time)).reduce((v,c) => v + c)) : '00:00:00';
+        StopTime = data.falseValArr.length !== 0 ? secondsToTimeFormat(data.falseValArr.map(v => secondFormat(v.time)).reduce((v,c) => v + c)) : '00:00:00';
 
         // console.log(data.totalArr);
         // console.log(data.trueValArr);
@@ -201,46 +208,67 @@ const comFunc = {
         detDataEl_11.innerHTML = `${avgKw}`;
         
         // 가동 Html
-        data.trueValArr.forEach((v, i) => {
-            let firstTime = v.first[0];
-            let lastTime = v.last[0];
-            let workTime = v.time;
-            let amp = v.amp;
-            let kw = v.kw;
-
+        if (data.trueValArr.length) {
+            data.trueValArr.forEach((v, i) => {
+                let firstTime = v.first[0];
+                let lastTime = v.last[0];
+                let workTime = v.time;
+                let amp = v.amp;
+                let kw = v.kw;
+    
+                detDataEl_12.insertAdjacentHTML('beforeend', 
+                    `<div class="dbt_wrap">
+                        <div class="dbt_item dbt_item__left">
+                            <p class="dbt_num">${(i+1).toString().padStart(2, '0')}.</p>
+                        </div>
+                        <div class="dbt_item dbt_item__right">
+                            <p class="dbt_txt"><b>측정 시간::</b> ${firstTime} ~ ${lastTime}</p>
+                            <p class="dbt_txt"><b>가동 시간::</b> ${workTime}</p>
+                            <p class="dbt_txt"><b>전류 (A)::</b> 최소: ${amp.min} / 최대: ${amp.max} / 평균: ${amp.avg}</p>
+                            <p class="dbt_txt"><b>전력 (kW)::</b> 최소: ${kw.min} / 최대: ${kw.max} / 평균: ${kw.avg}</p>
+                        </div>
+                    </div>`
+                );
+            });
+        } else {
             detDataEl_12.insertAdjacentHTML('beforeend', 
                 `<div class="dbt_wrap">
-                    <div class="dbt_item dbt_item__left">
-                        <p class="dbt_num">${(i+1).toString().padStart(2, '0')}.</p>
-                    </div>
                     <div class="dbt_item dbt_item__right">
-                        <p class="dbt_txt"><b>측정 시간::</b> ${firstTime} ~ ${lastTime}</p>
-                        <p class="dbt_txt"><b>가동 시간::</b> ${workTime}</p>
-                        <p class="dbt_txt"><b>전류 (A)::</b> 최소: ${amp.min} / 최대: ${amp.max} / 평균: ${amp.avg}</p>
-                        <p class="dbt_txt"><b>전력 (kW)::</b> 최소: ${kw.min} / 최대: ${kw.max} / 평균: ${kw.avg}</p>
+                        <p class="dbt_txt">측정되지 않음</p>
                     </div>
                 </div>`
             );
-        });
+        }
+        
 
         // 정지 Html
-        data.falseValArr.forEach((v, i) => {
-            let firstTime = v.first[0];
-            let lastTime = v.last[0];
-            let workTime = v.time;
-
+        if (data.falseValArr.length > 0) {
+            data.falseValArr.forEach((v, i) => {
+                let firstTime = v.first[0];
+                let lastTime = v.last[0];
+                let workTime = v.time;
+    
+                detDataEl_13.insertAdjacentHTML('beforeend', 
+                    `<div class="dbt_wrap">
+                        <div class="dbt_item dbt_item__left">
+                            <p class="dbt_num">${(i+1).toString().padStart(2, '0')}.</p>
+                        </div>
+                        <div class="dbt_item dbt_item__right">
+                            <p class="dbt_txt"><b>측정 시간::</b> ${firstTime} ~ ${lastTime}</p>
+                            <p class="dbt_txt"><b>가동 시간::</b> ${workTime}</p>
+                        </div>
+                    </div>`
+                );
+            });
+        } else {
             detDataEl_13.insertAdjacentHTML('beforeend', 
                 `<div class="dbt_wrap">
-                    <div class="dbt_item dbt_item__left">
-                        <p class="dbt_num">${(i+1).toString().padStart(2, '0')}.</p>
-                    </div>
                     <div class="dbt_item dbt_item__right">
-                        <p class="dbt_txt"><b>측정 시간::</b> ${firstTime} ~ ${lastTime}</p>
-                        <p class="dbt_txt"><b>가동 시간::</b> ${workTime}</p>
+                        <p class="dbt_txt">측정되지 않음</p>
                     </div>
                 </div>`
             );
-        });
+        }
     }
 }
 
