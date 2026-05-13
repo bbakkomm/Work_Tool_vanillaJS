@@ -1,7 +1,6 @@
-const $window = $(window);
-
-export const STATE = {
+export const PT_STATE = {
     $PROJECT: $('.sec_project_wrap'),
+    $PROJECT2: $('body'),
     eventState: {},
 };
 
@@ -18,7 +17,15 @@ export const util = {
      * @returns boolean
      */
     isMobile() {
-        return $window.outerWidth() <= 768;
+        return $(window).outerWidth() <= 768;
+    },
+
+    /**
+     * 해당 화면이 769 이상, 802이하 true 리턴
+     * @returns boolean
+     */
+    isFold() {
+        return 769 <= $(window).outerWidth() && $(window).outerWidth() <= 802;
     },
 
     /**
@@ -38,14 +45,26 @@ export const util = {
     },
 
     /**
-     * pc 1440, mo 720 기준으로 px값을 vw값으로 변환
+     * pc 1440, mo 720, fold 802 기준으로 px값을 vw값으로 변환
      * @param {number} pc pc 픽셀 값
      * @param {number} mo mo 픽셀 값, 인자 값이 없을경우 pc 픽셀 값으로 계산
+     * @param {number} fold fold 픽셀 값, 인자 값이 없을경우, mo 인자 값 확인 후 있으면 mo 픽셀 값으로 계산 / mo 인자 값이 없을 경우, pc 픽셀 값으로 계산
      */
-    pxToVw(pc, mo) {
-        const winWidth = $window.outerWidth();
-        const divide = util.isMobile() ? 720 : 1440;
-        const pixel = util.isMobile() ? (mo === undefined ? pc : mo) : pc;
+    pxToVw(pc, mo, fold) {
+        const winWidth = $(window).outerWidth();
+        const divide = util.isFold() ? 802 : util.isMobile() ? 720 : 1440;
+        let pixel = pc;
+
+        if (util.isFold()) {
+            // 폴드
+            pixel = fold !== undefined ? fold : mo !== undefined ? mo : pc;
+        } else if (util.isMobile()) {
+            // 모바일
+            pixel = mo !== undefined ? mo : pc;
+        }
+
+        // let pixel = util.isMobile() ? (mo === undefined ? pc : mo) : pc;
+
         return pixel >= 0 ? Math.min(pixel, (pixel / divide) * winWidth) : Math.max(pixel, (pixel / divide) * winWidth);
     },
 
@@ -70,25 +89,25 @@ export const util = {
     },
 
     /**
-     * STATE eventState 상태 값 저장
+     * PT_STATE eventState 상태 값 저장
      * @param {string} key eventState key값
      * @param {object} params eventState value 값
      */
     setEventState: function(key, params) {
-        if (!STATE.eventState[key]) {
-            STATE.eventState[key] = params;
+        if (!PT_STATE.eventState[key]) {
+            PT_STATE.eventState[key] = params;
         } else {
-            STATE.eventState[key] = Object.assign(STATE.eventState[key], params);
+            PT_STATE.eventState[key] = Object.assign(PT_STATE.eventState[key], params);
         }
     },
 
     /**
-     * STATE eventState 상태 값 불러오기
+     * PT_STATE eventState 상태 값 불러오기
      * @param {string} key eventState key값
      * @returns eventState value 값
      */
     getEventState: function(key) {
-        return STATE.eventState[key];
+        return PT_STATE.eventState[key];
     },
 
     /**
@@ -103,3 +122,9 @@ export const util = {
         return item;
     }
 };
+
+// window.PT_STATE = PT_STATE;
+if(!window.PT_STATE) window.PT_STATE = {};
+window.PT_STATE.$PROJECT = PT_STATE.$PROJECT;
+window.PT_STATE.$PROJECT2 = PT_STATE.$PROJECT2;
+window.PT_STATE.eventState = PT_STATE.eventState;
